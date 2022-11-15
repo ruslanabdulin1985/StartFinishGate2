@@ -1,14 +1,42 @@
-import React from 'react';
-import Logo from '../components/Logo';
-import Table from '../components/Table';
+
+import React, { useEffect, useState } from 'react';
+
 import Buttons from '../components/Buttons';
-import Menu from '../components/Menu';
+import Timer from '../components/Timer';
 
 
 const Main = () => {
+
+    const [isRaceOn, setIsRaceOn] = useState(false)
+    const [time, setTime] = useState(0);
+    const [startTime, setStartTime] = useState(null)
+
+
+    const setRaceOn = (value) => {
+        if (!isRaceOn) {
+            setTime(0)
+            setStartTime(Date.now())
+        }
+        setIsRaceOn(value)
+    }
+
+    useEffect(() => {
+        if (isRaceOn) {
+            setTimeout(() => setTime(() => Date.now() - startTime), 100)
+        }
+        if (!isRaceOn) {
+
+        }
+    }, [isRaceOn, time])
+
+
+
+    // while (isRaceOn) {
+    //     // increaseTime()
+    // }
     return (<>
-        <Table></Table>
-        <Buttons></Buttons>
+        <Timer time={time} isRaceOn={isRaceOn}></Timer>
+        <Buttons isRaceOn={isRaceOn} setRaceOn={setRaceOn}></Buttons>
     </>)
 }
 

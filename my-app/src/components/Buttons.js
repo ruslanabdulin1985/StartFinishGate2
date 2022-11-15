@@ -1,9 +1,20 @@
-import React from 'react';
 import './Buttons.css';
 
-const Buttons = () => {
+const Buttons = ({ isRaceOn, setRaceOn }) => {
+
+
+    const startRace = () => {
+        setRaceOn(true)
+
+    }
+
+    const finishRace = () => {
+        setRaceOn(false)
+
+    }
+
     return <div className='buttons'>
-        <button class="button startbutton">START</button>
+        {isRaceOn ? <button className="button finishbutton" onClick={finishRace}>FINISH</button> : <button className="button startbutton" onClick={startRace}>START</button>}
     </div>
 }
 

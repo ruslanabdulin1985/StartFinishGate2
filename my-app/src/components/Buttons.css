@@ -13,8 +13,13 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    margin-top: 50px;
 }
 
 .startbutton {
     background-color: #4CAF50
+}
+
+.finishbutton {
+    background-color: #fb0011e4
 }

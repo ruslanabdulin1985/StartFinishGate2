@@ -4,18 +4,22 @@ import './Table.css';
 const Table = () => {
     return <div className='table'>
         <table >
-            <tr>
-                <td>Time</td>
-                <td>Driver</td>
-            </tr>
-            <tr>
-                <td>12.35</td>
-                <td>Ruslan</td>
-            </tr>
-            <tr>
-                <td>12.68</td>
-                <td>Stuart</td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Driver</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>12.35</td>
+                    <td>Ruslan</td>
+                </tr>
+                <tr>
+                    <td>12.68</td>
+                    <td>Stuart</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 }
